@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store - Catalogue</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #eeeeee;
+        }
+
+        header {
+            height: 160px;
+            background: linear-gradient(to right, #ff9900, #ffb300);
+            text-align: center;
+            padding-top: 25px;
+            border-bottom: 3px solid #999;
+        }
+
+        header h1 {
+            margin: 10px;
+            color: #333;
+        }
+
+        nav {
+            margin-top: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0 18px;
+            border-right: 1px solid #555;
+        }
+
+        nav a:last-child {
+            border-right: none;
+        }
+
+        .main-container {
+            display: flex;
+            min-height: 450px;
+        }
+
+        .sidebar {
+            width: 25%;
+            min-width: 200px;
+            background: linear-gradient(#ffcc33, #ff9900);
+            padding: 25px;
+            border-right: 2px solid #999;
+        }
+
+        .sidebar h3 {
+            text-align: center;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px;
+            margin: 10px 0;
+            text-decoration: none;
+            background: rgba(255,255,255,0.4);
+            color: #333;
+            font-weight: bold;
+        }
+
+        .content {
+            width: 75%;
+            padding: 35px 20px;
+            overflow-x: auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #444;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            min-width: 750px;
+        }
+
+        th {
+            background: #ff9900;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            text-align: center;
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .book-cover {
+            width: 65px;
+            height: 85px;
+            background: #334;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5px;
+            font-size: 11px;
+            box-shadow: 2px 2px 5px #999;
+        }
+
+        button {
+            background: #ff9900;
+            color: white;
+            border: none;
+            padding: 9px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: linear-gradient(to right, #ff6600, #ffcc00);
+            text-align: center;
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>📚 G.L. Bajaj Online Book Store</h1>
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="registration.html">Registration</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <div class="main-container">
+
+        <aside class="sidebar">
+            <h3>Categories</h3>
+
+            <a href="catalogue.html">CSE Books</a>
+            <a href="catalogue.html">ECE Books</a>
+            <a href="catalogue.html">Mechanical Books</a>
+        </aside>
+
+        <main class="content">
+
+            <h2>Book Catalogue</h2>
+
+            <table>
+
+                <tr>
+                    <th>Cover Page</th>
+                    <th>Book Name</th>
+                    <th>Author Name</th>
+                    <th>Publisher</th>
+                    <th>Price</th>
+                    <th>Add to Cart</th>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <div class="book-cover">
+                            Computer<br>Science
+                        </div>
+                    </td>
+
+                    <td>Computer Science</td>
+                    <td>Robert Sedgewick</td>
+                    <td>Pearson</td>
+                    <td>Rs. 400</td>
+
+                    <td>
+                        <button onclick="addToCart(
+                            'Computer Science',
+                            'Robert Sedgewick',
+                            400,
+                            'Computer Science')">
+                            Add to Cart
+                        </button>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <div class="book-cover">
+                            Operating<br>System
+                        </div>
+                    </td>
+
+                    <td>Operating System Concepts</td>
+                    <td>Abraham Silberschatz</td>
+                    <td>Wiley</td>
+                    <td>Rs. 380</td>
+
+                    <td>
+                        <button onclick="addToCart(
+                            'Operating System Concepts',
+                            'Abraham Silberschatz',
+                            380,
+                            'Operating System')">
+                            Add to Cart
+                        </button>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <div class="book-cover">
+                            Database
+                        </div>
+                    </td>
+
+                    <td>Database Concepts</td>
+                    <td>Abraham Silberschatz</td>
+                    <td>McGraw Hill</td>
+                    <td>Rs. 250</td>
+
+                    <td>
+                        <button onclick="addToCart(
+                            'Database Concepts',
+                            'Abraham Silberschatz',
+                            250,
+                            'Database')">
+                            Add to Cart
+                        </button>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <div class="book-cover">
+                            Artificial<br>Intelligence
+                        </div>
+                    </td>
+
+                    <td>Artificial Intelligence</td>
+                    <td>Charu C. Aggarwal</td>
+                    <td>Springer</td>
+                    <td>Rs. 500</td>
+
+                    <td>
+                        <button onclick="addToCart(
+                            'Artificial Intelligence',
+                            'Charu C. Aggarwal',
+                            500,
+                            'Artificial Intelligence')">
+                            Add to Cart
+                        </button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </main>
+
+    </div>
+
+    <footer>
+        © Online Book Store Project
+    </footer>
+
+
+    <script>
+
+        function addToCart(name, author, price, cover) {
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            let existingBook = cart.find(book => book.name === name);
+
+            if (existingBook) {
+                existingBook.quantity++;
+            } else {
+                cart.push({
+                    name: name,
+                    author: author,
+                    price: price,
+                    cover: cover,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert(name + " added to cart!");
+        }
+
+    </script>
+
+</body>
+</html>
